@@ -1,16 +1,19 @@
 import React from "react";
 import Carrito from  '../../carrito.png'
 
-const SumaCarrito =(cantidadCarrito,sumar) => {
+
+
+
+const SumaCarrito =(cantidadCarrito) => {
     cantidadCarrito = 0;
     
 return(
-    <div>
-        <form className="d-flex">
+    <div>        
+        <form className="d-flex ">
         <img src={Carrito}/>
         <p className="item-count">{cantidadCarrito}</p>
         </form>
     </div>
 )
 }
-export default SumaCarrito
+export default SumaCarrito;
