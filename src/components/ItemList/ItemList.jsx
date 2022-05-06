@@ -4,19 +4,26 @@ import Item from "../Item/Item";
 const ItemList = ({ productos }) => {
     return (
         <>
-            {productos.length > 0 ? productos.map((producto, index) => (
+            {productos.length > 0 ? productos.map((producto) => (
                 <Item
-                    key={index}
+                    key={producto.id}
                     id={producto.id}
                     title={producto.title}
-                    description={producto.description}
-                    price={producto.price}
+                    //description={producto.description}
+                    //price={producto.price}
                     pictureUrl={producto.pictureUrl}
+
                 />
-            )) : (<h2 className="cargando"> Cargando... </h2>
-            )}
+
+            )) : <div class="spinner-border" role="status"> 
+                        <span class="visually-hidden">Loading...</span>
+                </div>
+            }
         </>
     )
 }
 
-export default ItemList 
+export default ItemList
+
+
+

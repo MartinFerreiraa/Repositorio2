@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Item = ({ id, title, description, price, pictureUrl }) => {
@@ -7,14 +8,45 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
             <h1 className="text-secondary">{id}</h1>
             <div className="text-center">
                 <title className="title">{title}</title>
-                <img src={pictureUrl} className="rounded" alt="Imagen producto" />
+                <img src={pictureUrl} className="img-thumbnail" alt="" />
                 <h5 className="description">{description}</h5>
+                <p className="price "> {price}</p>                
+                <div> 
+                    
+                    <Link to={`/item-detail/${id}`} type="button"className="bg-danger text-white rounded-pill"> Ver detalles</Link>
+                </div>
+            </div>
+        </div>
+
+    ) 
+    }    
+export default Item
+
+/**<button  type="button" className="bg-danger text-white rounded-pill">
+                        Ver Detalles
+                    </button> */
+/**import React from "react";
+
+
+function Item  ({ prod })  {
+    return (
+        <div key={prod.id} className="card">
+            <div className="text-center">
+                <title className="title">{prod.title}</title>
+                <div>
+                    <img src={prod.pictureUrl} className="rounded" alt="Imagen producto" />
+                    <h5 className="description">{prod.description}</h5>
+                </div>
                 <div className="justify-content-center align-items-center">
-                    <p className="price ">{price}</p>
+                    <p className="price ">{prod.price}</p>
+                    <button onClick={prod.id} type="button" className="bg-danger text-white rounded-pill">
+                        detalles
+                    </button>
+
                 </div>
             </div>
         </div>
 
     )
 }
-export default Item
+export default Item**/ 
