@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const Item = ({ id, title, description, price, pictureUrl }) => {
     return (
         <div className="card-body">
-            <h1 className="text-secondary">{id}</h1>
+            <h6 className="text-secondary invisible">{id}</h6>
             <div className="text-center">
-                <title className="title">{title}</title>
-                <img src={pictureUrl} className="img-thumbnail" alt="" />
-                <h5 className="description">{description}</h5>
-                <p className="price "> {price}</p>                
+                <title className="card-title">{title}</title>
+                <img src={pictureUrl} alt="" />
+                <h5 className="card-description">{description}</h5>
+                <p className="card-price "> {price}</p>                
                 <div> 
                     
                     <Link to={`/item-detail/${id}`} type="button"className="bg-danger text-white rounded-pill"> Ver detalles</Link>

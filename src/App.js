@@ -14,9 +14,7 @@ import Rutas from '../src/routes/Rutas'
 
 
 function App() {
-
   return (
-
     <div >
       <NavBar />
       <Rutas/>
