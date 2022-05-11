@@ -2,27 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const Item = ({ id, title, description, price, pictureUrl }) => {
+const Item = ({ id, title, description, price, pictureUrl, categoriId }) => {
     return (
-        <div className="card-body">
-            <h6 className="text-secondary invisible">{id}</h6>
+        <div className="">
+            <h6 className="text-secondary invisible ">{id}</h6>
             <div className="text-center">
-                <title className="card-title">{title}</title>
+                <title className="title">{title}</title>
+                <h2>{categoriId}</h2>                                
                 <img src={pictureUrl} alt="" />
-                <h5 className="card-description">{description}</h5>
-                <p className="card-price "> {price}</p>                
-                <div> 
-                    
-                    <Link to={`/item-detail/${id}`} type="button"className="bg-danger text-white rounded-pill"> Ver detalles</Link>
+                <h5 className="description">{description}</h5>
+                <p className="price "> {price}</p>
+                <div>
+                    <Link to={`/item/${id}`} type="button" className="bg-danger text-white "> Ver detalles</Link>
                 </div>
+               
             </div>
         </div>
 
-    ) 
-    }    
+    )
+}
 export default Item
 
-/**<button  type="button" className="bg-danger text-white rounded-pill">
+/**
+ * 
+ *  <div>
+                    <Link to={`/item-categoria/${categoria}`} type="button" className="bg-danger text-white rounded-pill">{categoria}</Link>
+                </div>
+ * <button  type="button" className="bg-danger text-white rounded-pill">
                         Ver Detalles
                     </button> */
 /**import React from "react";

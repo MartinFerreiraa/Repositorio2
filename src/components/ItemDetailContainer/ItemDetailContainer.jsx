@@ -6,12 +6,12 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 const ItemDetailContainer = () => {
     const { id } = useParams();
     const [ producto, setProducto ] = useState(null);
-
-    const filtrado = data.find((prod) => prod.id === Number(id));
+    const filtrar = data.find((producto) => producto.id === Number(id));
+    
     useEffect(() => {
         const promesa = new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(filtrado);
+                resolve(filtrar);
             }, 2000);
         })
         promesa
@@ -26,8 +26,7 @@ const ItemDetailContainer = () => {
             {producto ? <ItemDetail producto={producto} /> : 
                 <div class="spinner-border" role="status">
                     <span class="visually-hidden">Loading...</span>
-                </div>
-              
+                </div>            
             
             }
         </div>

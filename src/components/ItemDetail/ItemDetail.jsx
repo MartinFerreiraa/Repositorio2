@@ -6,14 +6,15 @@ const ItemDetail = ({ producto }) => {
 
   return (
     <div className="card-body bg-secondary text-center justify-content-center ">
-      <div className="card border">
-        <div className="card-title text-capitalize">
+      <div className="card">
+        <div className="card-title">
           {producto.title}
         </div>
         <div className="card-img-top">
-          <img src={producto.pictureUrl} className="img-fluid" alt="" />
+          <h2 className="invisible"> {producto.categoriId} </h2>
+          <img src={producto.pictureUrl}  alt="" />
         </div>
-        <div className="card-text fst-italic my-1">
+        <div className="card-text  my-1">
           {producto.description}
         </div>
         <div className="card-text my-1">
