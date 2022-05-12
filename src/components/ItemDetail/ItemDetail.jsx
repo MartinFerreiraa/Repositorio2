@@ -20,9 +20,12 @@ return (
         {producto.description}
       </div>
       <div className="card-text my-1">
-        {producto.price}        
+        {producto.price}       
       </div >
-      <ItemCount stock={producto.stock} />
+      <div className="conteiner d-flex justify-content-center p-10" >
+        <ItemCount stock={producto.stock} />
+      </div>
+      
     </div>
   </div>
   )

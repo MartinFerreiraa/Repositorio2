@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-const ItemCount = ({ stock, initaial, onAdd }) => {
+import { Link } from "react-router-dom";
+const ItemCount = ({ manejarClick,stock, initaial, onAdd }) => {
     const [count, setCount] = useState(initaial || 0);
+    
 
     const Restar = () => {
         if (count === 1) {
@@ -36,6 +38,7 @@ const ItemCount = ({ stock, initaial, onAdd }) => {
                     </div>
                     <button type="button" className="bg-primary text-white rounded-pill" onClick={Sumar}> + </button>
                 </div>
+                
                 <button onClick={agregarCarrito} type="button" className="bg-danger text-white rounded-pill">
                     agregar al carrito
                 </button>

@@ -5,7 +5,7 @@ import Carrito from '../../carrito.png'
 
 
 const CartWidget = (cantidadCarrito) => {
-    cantidadCarrito = 0;
+    cantidadCarrito = (0);
 
     return (
         <div className="carrito">
