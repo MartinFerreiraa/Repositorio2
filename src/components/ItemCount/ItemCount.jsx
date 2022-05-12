@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 const ItemCount = ({ stock, initaial, onAdd }) => {
-    const [count, setCount] = useState(initaial || 20);
+    const [count, setCount] = useState(initaial || 0);
 
     const Restar = () => {
         if (count === 1) {
@@ -28,7 +28,7 @@ const ItemCount = ({ stock, initaial, onAdd }) => {
                     role="group"
                     arial-label="Basic outlined example"
                 >
-                    <h2 class="h6"> Stock {stock}</h2>
+                    <h2 class="h6"> Stock {stock} </h2>
                     <button type="button" className=" bg-primary text-white rounded-pill" onClick={Restar}> - </button>
 
                     <div className=" d-flex justify-content-center aling-item-center" style={{ padding: "5px" }}>
@@ -49,3 +49,4 @@ const ItemCount = ({ stock, initaial, onAdd }) => {
 };
 
 export default ItemCount
+

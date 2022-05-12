@@ -3,10 +3,8 @@ import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailCon
 import Layout from "../components/Layout/Layout";
 import Home from "../components/Views/Home";
 import Error from "../components/Views/Error";
-import Niños from "../components/Views/Niños";
-import Hombre from "../components/Views/Hombre";
-import Mujeres from "../components/Views/Mujeres";
 import Login from "../components/Views/Login";
+import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
 
 
 
@@ -18,9 +16,7 @@ const Rutas = () => {
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />
                         <Route path="/item/:id" element={<ItemDetailContainer />} />
-                        <Route path="/item/categori/:categoriId" element={<Hombre/>} /> 
-                        <Route path="/item/categori/:categoriId" element={<Mujeres/>} /> 
-                        <Route path="/item/categori/:categoriId" element={<Niños/>} /> 
+                        <Route path="/category/:cat" element={<ItemListContainer/>} />                         
                         <Route path="/login" element={<Login/>}/>
                         <Route path="*" element={<Error/>}/>
                        

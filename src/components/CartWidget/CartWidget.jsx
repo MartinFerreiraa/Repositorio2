@@ -17,3 +17,6 @@ const CartWidget = (cantidadCarrito) => {
     )
 }
 export default CartWidget
+
+//*const CartWidget = (cantidadCarrito) => {
+   // cantidadCarrito = 0;

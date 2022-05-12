@@ -4,7 +4,8 @@ import { data } from '../../config'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
-    const { id } = useParams();
+
+    const { id } = useParams()
     const [ producto, setProducto ] = useState(null);
     const filtrar = data.find((producto) => producto.id === Number(id));
     
@@ -15,10 +16,14 @@ const ItemDetailContainer = () => {
             }, 2000);
         })
         promesa
-            .then((res) => { setProducto(res); })
+            .then((res) => { setProducto(res)
+            })
             .then(() => console.log(producto))
-            .catch((err) => console.log(err));
-    }, []);
+            .catch((err) => console.log(err))
+        return() =>{
+
+        }
+    }, [])
 
 
     return (

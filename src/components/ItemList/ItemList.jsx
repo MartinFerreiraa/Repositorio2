@@ -10,10 +10,11 @@ const ItemList = ({ productos }) => {
                 key={producto.id}
                 id={producto.id}
                 title={producto.title}
-                categoriId={producto.categoriId}
+                category={producto.category}
                 //description={producto.description}
                 //price={producto.price}
                 pictureUrl={producto.pictureUrl}
+                stock={producto.stock}
 
 
                 />)
