@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-const ItemCount = ({ manejarClick,stock, initaial, onAdd }) => {
-    const [count, setCount] = useState(initaial || 0);
+const ItemCount = ({ manejarClick, stock, initaial, quantityToAdd }) => {
+    const [count, setCount] = useState(initaial || 1);
     
 
     const Restar = () => {
@@ -19,9 +19,10 @@ const ItemCount = ({ manejarClick,stock, initaial, onAdd }) => {
             setCount(count + 1);
         }
     }
-    const agregarCarrito = () => {
-        onAdd(count)
+    const carro = () => {
+        quantityToAdd= (count)
     }
+   
     return (
         <div className="contador" style={{ width: "18rem", height: "17rem" }}>
             <div className="justify-content-center aling-item-center flex-column">
@@ -38,10 +39,8 @@ const ItemCount = ({ manejarClick,stock, initaial, onAdd }) => {
                     </div>
                     <button type="button" className="bg-primary text-white rounded-pill" onClick={Sumar}> + </button>
                 </div>
+                <Link to={""} onClick={() => manejarClick(count)}  className="btn btn-success w-100 text-light"> Añadir al Carrito</Link>
                 
-                <button onClick={agregarCarrito} type="button" className="bg-danger text-white rounded-pill">
-                    agregar al carrito
-                </button>
             </div>
         </div>
 

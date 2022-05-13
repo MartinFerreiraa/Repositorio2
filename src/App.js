@@ -3,10 +3,14 @@ import './App.css';
 import Rutas from '../src/routes/Rutas'
 
 
+
 function App() {
   return (
     <div >
-      <Rutas/>
+
+      <Rutas />
+
+
     </div>
 
   );
