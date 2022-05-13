@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -31,10 +32,12 @@ const ItemDetail = ({ producto }) => {
           {producto.price}
         </div >
         <div className="conteiner d-flex justify-content-center p-10" >
-         
-          <ItemCount manejarClick={quantityToAdd} stock={producto.stock}  />
-
+          <ItemCount manejarClick={quantityToAdd} stock={producto.stock} />
         </div>
+        <div className="justify-content-center aling-item-center flex-column ">
+          <Link to={"/Card"} className=" btn btn-success p-10 text-light"> Comprar </Link>
+        </div>
+        
       </div>
     </div>
   )

@@ -39,7 +39,10 @@ const ItemCount = ({ manejarClick, stock, initaial, quantityToAdd }) => {
                     </div>
                     <button type="button" className="bg-primary text-white rounded-pill" onClick={Sumar}> + </button>
                 </div>
-                <Link to={""} onClick={() => manejarClick(count)}  className="btn btn-success w-100 text-light"> Añadir al Carrito</Link>
+                <div>
+                    <Link to={""} onClick={() => manejarClick(count)}  className="btn btn-success w-100 text-light"> Añadir al Carrito</Link>
+                </div>
+                
                 
             </div>
         </div>
