@@ -2,23 +2,24 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { data } from '../../config'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import Cargando from '../Views/Cargando'
 
 const ItemDetailContainer = () => {
 
     const { id } = useParams()
-    const [ producto, setProducto ] = useState(null);
-    const filtrar = data.find((producto) => producto.id === Number(id));
+    const [ productos, setProductos ] = useState([]);
+    const filtrar = data.find((prod) => prod.id === Number(id));
     
     useEffect(() => {
         const promesa = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(filtrar);
-            }, 2000);
+            }, 1000);
         })
         promesa
-            .then((res) => { setProducto(res)
+            .then((res) => { setProductos(res)
             })
-            .then(() => console.log(producto))
+            .then(() => console.log(productos))
             .catch((err) => console.log(err))
         return() =>{
 
@@ -28,10 +29,8 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {producto ? <ItemDetail producto={producto} /> : 
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>            
+            {productos ? <ItemDetail productos={productos} /> : 
+                <Cargando/>         
             
             }
         </div>

@@ -1,22 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { GlobalContext } from "../../context/GlobalStateContext";
 import imgCarrito from '../../imgCarrito.png'
 
 
 
 
-const CartWidget = (Carrito) => {
-    Carrito = ("");
+const CartWidget = () => {
+    const { carrito } = useContext(GlobalContext)
+
 
     return (
-        <div className="carrito">
-            <form className="d-flex ">
-                <img src={imgCarrito} />
-                <p className="item-count">{Carrito}</p>
-            </form>
-        </div>
+        <>
+
+
+            <Link to="/Card">
+                <span>{carrito.length}</span>
+                <img to={"/Card"} src={imgCarrito} />
+            </Link>
+
+        </>
     )
+
 }
 export default CartWidget
 
 //*const CartWidget = (cantidadCarrito) => {
    // cantidadCarrito = 0;
+
