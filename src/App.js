@@ -1,16 +1,16 @@
 import './App.css';
 
 import Rutas from '../src/routes/Rutas'
+import GlobalStateContext from './context/GlobalStateContext';
 
 
 
 function App() {
   return (
     <div >
-
-      <Rutas />
-
-
+      <GlobalStateContext>
+        <Rutas />
+      </GlobalStateContext>    
     </div>
 
   );

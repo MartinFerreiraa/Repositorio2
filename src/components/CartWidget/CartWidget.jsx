@@ -1,17 +1,17 @@
 import React from "react";
-import Carrito from '../../carrito.png'
+import imgCarrito from '../../imgCarrito.png'
 
 
 
 
-const CartWidget = (cantidadCarrito) => {
-    cantidadCarrito = (0);
+const CartWidget = (Carrito) => {
+    Carrito = ("");
 
     return (
         <div className="carrito">
             <form className="d-flex ">
-                <img src={Carrito} />
-                <p className="item-count">{cantidadCarrito}</p>
+                <img src={imgCarrito} />
+                <p className="item-count">{Carrito}</p>
             </form>
         </div>
     )

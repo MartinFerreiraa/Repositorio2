@@ -24,24 +24,25 @@ const ItemCount = ({ manejarClick, stock, initaial, quantityToAdd }) => {
     }
    
     return (
-        <div className="contador" style={{ width: "18rem", height: "17rem" }}>
+        <div className="contador " style={{ width: "10rem", height: "12rem" }}>
             <div className="justify-content-center aling-item-center flex-column">
                 <div
-                    className="text-dark btn-group d-flex justify-content-center aling-item-center my-1 flex-column"
+                    className="text-dark btn-group d-flex justify-content-center aling-item-center my-2 flex-column"
                     role="group"
                     arial-label="Basic outlined example"
                 >
                     <h2 class="h6"> Stock {stock} </h2>
-                    <button type="button" className=" bg-primary text-white rounded-pill" onClick={Restar}> - </button>
+                    <button type="button" className=" btn btn-success  text-light" onClick={Restar}> - </button>
 
-                    <div className=" d-flex justify-content-center aling-item-center" style={{ padding: "5px" }}>
+                    <div className=" d-flex justify-content-center aling-item-center" style={{ padding: "2px" }}>
                         {count}
                     </div>
-                    <button type="button" className="bg-primary text-white rounded-pill" onClick={Sumar}> + </button>
+                    <button type="button" className="btn btn-success text-light" onClick={Sumar}> + </button>
                 </div>
                 <div>
-                    <Link to={""} onClick={() => manejarClick(count)}  className="btn btn-success w-100 text-light"> Añadir al Carrito</Link>
+                    <Link to={""} onClick={() => manejarClick(count)}  className="btn btn-success text-light"> Añadir al Carrito</Link>
                 </div>
+                
                 
                 
             </div>

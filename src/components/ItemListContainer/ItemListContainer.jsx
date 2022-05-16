@@ -1,35 +1,25 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import { data } from "../../config/index";
-import { useParams } from "react-router-dom";
-//*function Filtrado(params) { }
-//*const filtro = data.find((producto) => producto.category === (category));
-
-
+import { Link, useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
     const { cat } = useParams()
     const [productos, setProductos] = useState([])
 
-
-
-
     useEffect(() => {
-
         const promesa = new Promise((resolve, reject) => {
-
             setTimeout(() => {
                 let Filtrado = data
                 if (cat === 'M') {
                     Filtrado = data.filter((productos => productos.category === 'M'))
                 }
-                else if (cat === 'F') {
+                if (cat === 'F') {
                     Filtrado = data.filter((productos => productos.category === 'F'))
                 }
-                else if (cat === 'N') {
+                if (cat === 'N') {
                     Filtrado = data.filter((productos => productos.category === 'N'))
                 }
-
                 resolve(Filtrado)
             }, 2000);
         })

@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-
-
 import ItemCount from "../ItemCount/ItemCount";
-
-
-
 
 const ItemDetail = ({ producto }) => {
   const [carro, setCarro] = useState("")
@@ -14,7 +8,6 @@ const ItemDetail = ({ producto }) => {
     setCarro(carro)
     console.log(carro)
   }
-
   return (
     <div className="card-body bg-secondary text-center justify-content-center ">
       <div className="card">
@@ -37,10 +30,12 @@ const ItemDetail = ({ producto }) => {
         <div className="justify-content-center aling-item-center flex-column ">
           <Link to={"/Card"} className=" btn btn-success p-10 text-light"> Comprar </Link>
         </div>
-        
+
       </div>
     </div>
   )
 }
 
 export default ItemDetail
+
+
