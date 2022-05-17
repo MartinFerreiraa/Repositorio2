@@ -4,25 +4,25 @@ import { GlobalContext } from '../../context/GlobalStateContext'
 
 const Card = () => {
   const { carrito, eliminarProducto, vaciarCard, total } = useContext(GlobalContext)
-  console.log(carrito.count)
+  console.log(carrito)
   return (
     <>
-      {carrito.lenght > 0 ? carrito.map((prod, index) => {
+      {carrito.lenght > 0 ? carrito.map((producto, index) => {
         return (
           <section key={index}>
             <div>
-              <img src={prod.pictureUrl} alt="" />
+              <img src={producto.pictureUrl} alt="" />
             </div>
             <div>
-              {prod.title}
+              {producto.title}
             </div>
             <div>
-              {prod.descripcion}
+              {producto.descripcion}
             </div>
             <div>
-              <p> Cantidad:{prod.count}</p>
+              <p> Cantidad:{producto.count}</p>
               <p>Total: {total}</p>
-              <button className="btn btn-warning text-dark" onClick={() => eliminarProducto(prod.id)}>Eliminar</button>
+              <button className="btn btn-warning text-dark" onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
             </div>
           </section>
         )

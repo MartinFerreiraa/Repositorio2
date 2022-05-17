@@ -11,11 +11,11 @@ const ItemDetail = ({ productos: { id, title, description, price, pictureUrl, ca
   const quantityToAdd = (count) => {
     setCantidadComprada(count)
     carrito.count = quantityToAdd
-    console.log(carrito.count)
+    console.log(carrito)
   }
   const [state, setState] = useState({})
   useEffect(() => {
-    setState({ id, title, description, price, pictureUrl, category, stock})
+    setState({ id, title, description, price, pictureUrl, category, stock })
   })
   const itemCarro = {
     id: id,
@@ -29,26 +29,27 @@ const ItemDetail = ({ productos: { id, title, description, price, pictureUrl, ca
   return (
     <div className="card-body bg-secondary text-center justify-content-center ">
       <div className="card">
-        <div className="card-title">
+        <div className="font-weight-bold">
           {title}
         </div>
         <div className="card-img-top">
           <h2 className="invisible"> {category} </h2>
           <img src={pictureUrl} alt="" />
         </div>
-        <div className="card-text  my-1">
+        <div className="card-text font-weight-light">
           {description}
         </div>
-        <div className="card-text my-1">
+        <div className="card-text">
           {price}
         </div >
-        <div className="conteiner d-flex justify-content-center p-10" >
-        </div>
       </div>
-      {cantidadComprada > 0 ? (
-        <Link to={"/Card"} onClick={() => agregarCarrito(itemCarro)} className='btn btn-success text-light'>Finalizar Compra </Link>
-      ) : (<ItemCount manejarClick={quantityToAdd} stock={stock} />)
-      }
+      <div className="d-block justify-content-center text-center ">
+        {cantidadComprada > 0 ? (
+          <Link to={"/Card"} onClick={() => agregarCarrito(itemCarro)} className='btn btn-success text-light'>Finalizar Compra </Link>
+        ) : (<ItemCount manejarClick={quantityToAdd} stock={stock} />)
+        }
+      </div>
+
     </div>
   )
 

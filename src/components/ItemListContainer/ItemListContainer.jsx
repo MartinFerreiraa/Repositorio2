@@ -33,7 +33,7 @@ const ItemListContainer = () => {
     }, []);
 
     return (
-        <div className='container text-warning bg-secondary d-flex justify-content-center aling-item-center' style={{ padding: "10px" }}>
+        <div className=' d-flex bg-secondary justify-content-center aling-item-center' style={{ padding: "20px" }}>
 
             {productos ? <ItemList productos={productos}/> : <Cargando/>}
         </div>

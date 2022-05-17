@@ -14,9 +14,9 @@ const CartWidget = () => {
         <>
 
 
-            <Link to="/Card">
-                <span>{carrito.length}</span>
+            <Link to="/Card">                
                 <img to={"/Card"} src={imgCarrito} />
+                <span>{carrito.length}</span>
             </Link>
 
         </>
