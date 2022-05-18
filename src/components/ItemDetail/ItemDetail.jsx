@@ -11,12 +11,14 @@ const ItemDetail = ({ productos: { id, title, description, price, pictureUrl, ca
   const quantityToAdd = (count) => {
     setCantidadComprada(count)
     carrito.count = quantityToAdd
-    console.log(carrito)
+    console.log(carrito.count)
   }
   const [state, setState] = useState({})
+
   useEffect(() => {
     setState({ id, title, description, price, pictureUrl, category, stock })
   })
+
   const itemCarro = {
     id: id,
     title: title,
@@ -26,6 +28,7 @@ const ItemDetail = ({ productos: { id, title, description, price, pictureUrl, ca
     category: category,
     stock: stock
   }
+  
   return (
     <div className="card-body bg-secondary text-center justify-content-center ">
       <div className="card">

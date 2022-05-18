@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import { data } from "../../config/index";
-import { Link, useParams } from "react-router-dom";
-import Error from "../Views/Error";
-import Cargando from "../Views/Cargando";
+import { useParams } from "react-router-dom";
+import Loading from '../Loading/Loading'
+
+
 
 const ItemListContainer = () => {
     const { cat } = useParams()
@@ -35,7 +36,7 @@ const ItemListContainer = () => {
     return (
         <div className=' d-flex bg-secondary justify-content-center aling-item-center' style={{ padding: "20px" }}>
 
-            {productos ? <ItemList productos={productos}/> : <Cargando/>}
+            {productos ? <ItemList productos={productos} /> : <Loading />}
         </div>
     )
 }

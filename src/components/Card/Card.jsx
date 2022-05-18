@@ -7,26 +7,26 @@ const Card = () => {
   console.log(carrito)
   return (
     <>
-      {carrito.lenght > 0 ? carrito.map((producto, index) => {
+      {carrito.lenght > 0 ? carrito.map((productos, index) => {
         return (
           <section key={index}>
             <div>
-              <img src={producto.pictureUrl} alt="" />
+              <img src={productos.pictureUrl} alt="" />
             </div>
             <div>
-              {producto.title}
+              {productos.title}
             </div>
             <div>
-              {producto.descripcion}
+              {productos.descripcion}
             </div>
             <div>
-              <p> Cantidad:{producto.count}</p>
+              <p> Cantidad:{productos.count}</p>
               <p>Total: {total}</p>
-              <button className="btn btn-warning text-dark" onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
+              <button className="btn btn-warning text-dark" onClick={() => eliminarProducto(productos.id)}>Eliminar</button>
             </div>
           </section>
         )
-      }) : <h4>Nada agregado</h4>
+      }) : <h4>Carrito vacio</h4>
       }
         {carrito.legth > 0 ?(
          <div>

@@ -1,16 +1,19 @@
 import React, { createContext, useEffect, useState } from 'react'
-
 export const GlobalContext = createContext('')
 
 const GlobalStateContext = ({ children }) => {
     const [carrito, setCarrito] = useState([])
+
     useEffect(() => {
-        const carritoLs = JSON.parse(localStorage.getItem("carrito")) ?? []
+        const carritoLs = JSON.parse(localStorage.getItem('carrito')) ?? []
         setCarrito(carritoLs)
     }, [])
+
+
     useEffect(() => {
-        localStorage.setItem("carrito", JSON.stringify(carrito))
+        localStorage.setItem('carrito', JSON.stringify(carrito))
     }, [carrito])
+
 
     const agregarCarrito = (producto) => {
         if (carrito.some(producto => producto.id === producto.id)) {
@@ -19,6 +22,8 @@ const GlobalStateContext = ({ children }) => {
             setCarrito([...carrito, producto])
         }
     }
+
+
     const [total, setTotal] = useState(0)
     useEffect(() => {
         const calculoTotal = carrito.reduce(
@@ -26,6 +31,7 @@ const GlobalStateContext = ({ children }) => {
         )
         setTotal(calculoTotal)
     }, [carrito])
+    
 
     const eliminarProducto = (id) => {
         const prodEliminar = carrito.filter(producto => producto.id !== id)

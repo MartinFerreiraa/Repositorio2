@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Item from "../Item/Item";
-import Cargando from "../Views/Cargando";
+import Loading from "../Loading/Loading";
 
 
 
@@ -9,7 +9,7 @@ const ItemList = ({productos }) => {
         <div>
             {productos.length > 0 ? (productos.map((productos) => (<Item key={productos.id} productos={productos} />)))
                 : (
-                    <Cargando />
+                    <Loading />
                 )}
         </div>
     )

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { data } from '../../config'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import Cargando from '../Views/Cargando'
+import Loading from '../Loading/Loading'
 
 const ItemDetailContainer = () => {
 
@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
         const promesa = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(filtrar);
-            }, 1000);
+            }, 2500);
         })
         promesa
             .then((res) => { setProductos(res)
@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
     return (
         <div>
             {productos ? <ItemDetail productos={productos} /> : 
-                <Cargando/>         
+                <Loading/>         
             
             }
         </div>
