@@ -32,4 +32,3 @@ const Item = ({ productos }) => {
     )
 }
 export default Item
-

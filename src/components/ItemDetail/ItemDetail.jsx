@@ -59,5 +59,3 @@ const ItemDetail = ({ productos: { id, title, description, price, pictureUrl, ca
 }
 
 export default ItemDetail
-
-

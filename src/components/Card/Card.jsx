@@ -1,3 +1,4 @@
+import { toBeInTheDOM } from '@testing-library/jest-dom/dist/matchers'
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalStateContext'
@@ -7,22 +8,22 @@ const Card = () => {
   console.log(carrito)
   return (
     <>
-      {carrito.lenght > 0 ? carrito.map((productos, index) => {
+      {carrito.lenght > 0 ? carrito.map((item, index) => {
         return (
           <section key={index}>
             <div>
-              <img src={productos.pictureUrl} alt="" />
+              <img src={item.producto.pictureUrl} alt="" />
             </div>
             <div>
-              {productos.title}
+              {item.producto.title}
             </div>
             <div>
-              {productos.descripcion}
+              {item.producto.descripcion}
             </div>
             <div>
-              <p> Cantidad:{productos.count}</p>
+              <p> Cantidad:{item.count}</p>
               <p>Total: {total}</p>
-              <button className="btn btn-warning text-dark" onClick={() => eliminarProducto(productos.id)}>Eliminar</button>
+              <button className="btn btn-warning text-dark" onClick={() => eliminarProducto(toBeInTheDOM.id)}>Eliminar</button>
             </div>
           </section>
         )
